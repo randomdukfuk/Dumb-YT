@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "DumbYoutube",
+    "version": "1.2",
+    "description": "Removes shorts, hides home feed, removes home button, and defaults to Subscriptions.",
+    "permissions": [
+        "storage"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "DumbYoutube@local.addon",
+            "data_collection_permissions": {
+              "required": ["none"]
+            }
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "css": ["style.css"],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        }
+    ]
+}
